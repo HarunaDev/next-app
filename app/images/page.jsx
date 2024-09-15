@@ -6,7 +6,7 @@ const page = () => {
   return (
     <div>
         <h1>Images will be displayed here</h1>
-        <Image src={Img} alt="Design Image" />
+        <Image src={Img} alt="Design Image" width="300" />
     </div>
   )
 }
