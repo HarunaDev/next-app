@@ -7,7 +7,7 @@ import Form from "./components/Form";
 
 export default function Home() {
   return (
-    <div className="">
+    <div className="h-screen">
             <Form />
     </div>
   );
