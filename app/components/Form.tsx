@@ -9,7 +9,6 @@ import {
   IconButton,
   Button,
   VStack,
-  HStack,
   Wrap,
   WrapItem,
   FormControl,
@@ -19,57 +18,49 @@ import {
   InputLeftElement,
   Textarea,
 } from '@chakra-ui/react'
-import {
-  MdPhone,
-  MdEmail,
-  MdLocationOn,
-  MdFacebook,
-  MdOutlineEmail,
-} from 'react-icons/md'
-import { BsGithub, BsDiscord, BsPerson } from 'react-icons/bs'
 
 import React from 'react'
 
-export default function Form(){
-    return (
-        <>
-        <Container bg="#9DC4FB" maxW="full" mt={0} centerContent overflow="hidden">
+export default function Form() {
+  return (
+    <Container bg="white" maxW="full" mt={0} centerContent overflow="hidden">
       <Flex>
         <Box
-          bg="#02054B"
+          bg="red.400"
           color="white"
           borderRadius="lg"
           m={{ sm: 4, md: 16, lg: 10 }}
           p={{ sm: 5, md: 5, lg: 16 }}>
           <Box p={4}>
             <Wrap spacing={{ base: 20, sm: 3, md: 5, lg: 20 }}>
-              
               <WrapItem>
-                <Box bg="white" borderRadius="lg">
-                  <Box m={8} color="#0B0E3F">
+                <Box bg="white" borderRadius="lg" boxShadow="lg">
+                  <Box m={8} color="red.700">
                     <VStack spacing={5}>
-                      <FormControl id="name">
-                        <FormLabel>Title</FormLabel>
-                        <InputGroup borderColor="#E0E1E7">
-                          <InputLeftElement pointerEvents="none">
-                            
-                          </InputLeftElement>
-                          <Input type="text" size="md" />
+                      <FormControl id="title">
+                        <FormLabel color="red.500">Title</FormLabel>
+                        <InputGroup borderColor="red.300">
+                          <Input type="text" size="md" focusBorderColor="red.500" />
                         </InputGroup>
                       </FormControl>
-                      
-                      <FormControl id="name">
-                        <FormLabel>Message</FormLabel>
+
+                      <FormControl id="message">
+                        <FormLabel color="red.500">Message</FormLabel>
                         <Textarea
-                          borderColor="gray.300"
+                          borderColor="red.300"
                           _hover={{
-                            borderRadius: 'gray.300',
+                            borderColor: 'red.400',
                           }}
-                          placeholder="message"
+                          focusBorderColor="red.500"
+                          placeholder="Enter your message"
                         />
                       </FormControl>
-                      <FormControl id="name" float="right">
-                        <Button variant="solid" bg="#0D74FF" color="white" _hover={{}}>
+                      <FormControl id="submit" float="right">
+                        <Button
+                          variant="solid"
+                          bg="red.500"
+                          color="white"
+                          _hover={{ bg: 'red.600' }}>
                           Post
                         </Button>
                       </FormControl>
@@ -82,6 +73,5 @@ export default function Form(){
         </Box>
       </Flex>
     </Container>
-        </>
-    )
+  )
 }
