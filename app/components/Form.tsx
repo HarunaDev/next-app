@@ -1,5 +1,5 @@
 'use client'
-
+import { useState } from 'react'
 import {
   Container,
   Flex,
@@ -21,7 +21,18 @@ import {
 
 import React from 'react'
 
+interface FormData {
+  title: string;
+  message: string;
+}
+
 export default function Form() {
+  // defining state with typed object
+  const [formData, setFormData] = useState<FormData>({
+    title: '',
+    message: ''
+  })
+
   return (
     <Container bg="white" maxW="full" mt={0} centerContent overflow="hidden">
       <Flex>
