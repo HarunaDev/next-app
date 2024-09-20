@@ -33,6 +33,18 @@ export default function Form() {
     message: ''
   })
 
+  // function to handle state change
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const {name, value} = e.target;
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      [name]: value,
+    }));
+    console.log(formData)
+  };
+
   return (
     <Container bg="white" maxW="full" mt={0} centerContent overflow="hidden">
       <Flex>
@@ -51,13 +63,13 @@ export default function Form() {
                       <FormControl id="title">
                         <FormLabel color="red.500">Title</FormLabel>
                         <InputGroup borderColor="red.300">
-                          <Input type="text" size="md" focusBorderColor="red.500" />
+                          <Input type="text" name="title" value={formData.title} onChange={handleInputChange} size="md" focusBorderColor="red.500" />
                         </InputGroup>
                       </FormControl>
 
                       <FormControl id="message">
                         <FormLabel color="red.500">Message</FormLabel>
-                        <Textarea
+                        <Textarea name="message" value={formData.message} onChange={handleInputChange}
                           borderColor="red.300"
                           _hover={{
                             borderColor: 'red.400',
