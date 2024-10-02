@@ -45,6 +45,16 @@ export default function Form() {
     console.log(formData)
   };
 
+  // function to handl button submission
+  const onSubmitHandler = async (e: React.FormEvent<HTMLFormElement>): Promise<void> => {
+    e.preventDefault();
+    try {
+      // api code
+    } catch(error) {
+      
+    }
+  }
+
   return (
     <Container bg="white" maxW="full" mt={0} centerContent overflow="hidden">
       <Flex>
@@ -59,6 +69,7 @@ export default function Form() {
               <WrapItem>
                 <Box bg="white" borderRadius="lg" boxShadow="lg">
                   <Box m={8} color="red.700">
+                    <form onSubmit={onSubmitHandler}>
                     <VStack spacing={5}>
                       <FormControl id="title">
                         <FormLabel color="red.500">Title</FormLabel>
@@ -88,6 +99,7 @@ export default function Form() {
                         </Button>
                       </FormControl>
                     </VStack>
+                    </form>
                   </Box>
                 </Box>
               </WrapItem>
