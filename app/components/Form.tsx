@@ -54,7 +54,7 @@ export default function Form() {
       // api code
       toast.success("Sent")
     } catch(error) {
-      
+      toast.error("Failed")
     }
   }
 
@@ -72,7 +72,7 @@ export default function Form() {
               <WrapItem>
                 <Box bg="white" borderRadius="lg" boxShadow="lg">
                   <Box m={8} color="red.700">
-                    <ToastContainer />
+                    <ToastContainer theme="dark" autoClose={2000} />
                     <form onSubmit={onSubmitHandler}>
                     <VStack spacing={5}>
                       <FormControl id="title">
