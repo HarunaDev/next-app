@@ -1,5 +1,7 @@
 'use client'
 import { useState } from 'react'
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 import {
   Container,
   Flex,
@@ -50,6 +52,7 @@ export default function Form() {
     e.preventDefault();
     try {
       // api code
+      toast.success("Sent")
     } catch(error) {
       
     }
@@ -69,6 +72,7 @@ export default function Form() {
               <WrapItem>
                 <Box bg="white" borderRadius="lg" boxShadow="lg">
                   <Box m={8} color="red.700">
+                    <ToastContainer />
                     <form onSubmit={onSubmitHandler}>
                     <VStack spacing={5}>
                       <FormControl id="title">
@@ -90,7 +94,7 @@ export default function Form() {
                         />
                       </FormControl>
                       <FormControl id="submit" float="right">
-                        <Button
+                        <Button id='submit' type='submit'
                           variant="solid"
                           bg="red.500"
                           color="white"
